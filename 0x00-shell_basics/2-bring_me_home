@@ -1,2 +1,2 @@
 #!/bin/bash
-source cd /home  
+cd $HOME 
