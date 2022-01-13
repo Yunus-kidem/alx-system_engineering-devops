@@ -35,18 +35,18 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend  elmahdi-alx-frontend-http
+frontend  yunus-alx-frontend-http
         bind *:80
         redirect scheme https code 301 if !{ ssl_fc }
         http-request set-header X-Forwarded-Proto http
         default_backend elmahdi-alx-backend
 
-frontend  elmahdi-alx-frontend-https
+frontend  yunus-alx-frontend-https
         bind *:443 ssl crt /etc/ssl/www.elmahdi-alx.tech/www.elmahdi-alx.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend elmahdi-alx-backend
 
-backend elmahdi-alx-backend
+backend yunus-alx-backend
         balance roundrobin
         server 335-web-01 34.75.211.145:80 check
         server 335-web-02 3.236.217.0:80 check
