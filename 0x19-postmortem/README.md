@@ -1,5 +1,5 @@
 ## 0x19-postmortem
-
+![I WILL FIND YOU AND I WILL FIX YOU](https://pics.me.me/idontuse-debuggers-istare-down-until-the-code-confesses-memes-thats-10674287.png)
 
 ## Issue summary 
 
