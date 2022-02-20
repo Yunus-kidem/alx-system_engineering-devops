@@ -1,5 +1,6 @@
 ## 0x19-postmortem
-![I WILL FIND YOU AND I WILL FIX YOU](https://pics.me.me/idontuse-debuggers-istare-down-until-the-code-confesses-memes-thats-10674287.png)
+![BUG](https://i.pinimg.com/564x/74/68/56/74685691970bbb2e0c1b2c7176fb5d05.jpg)
+
 
 ## Issue summary 
 
@@ -36,6 +37,7 @@ To solve the problem we made it possible to finish the transaction afterwards to
 We prepare internal postmortems after any serious issue in order to analyze the causes and learn from our mistakes. This is prepared by our team leader Yunus Kidem that took part in dealing with the outage. 
 What is going on inside a service which experiences traffic higher than it can handle with available resources? As response times increase, the autoscaler tries to scale up the service. On the other hand, instances whose health endpoint can’t respond within a specified timeout, are automatically shut down. During the outage, autoscaler did not respond quickly enough to rising traffic and we had to scale up manually. There were also some bad interactions between the autoscaler scaling services up and the cluster watchdog killing off unresponsive instances.
 
+![code confesses](https://pics.me.me/idontuse-debuggers-istare-down-until-the-code-confesses-memes-thats-10674287.png)
 
 ## Corrective and preventative measures
 The observation that new Opbox instances had issues while starting under high load. Newly started instances very quickly reached “unresponsive” status and were automatically killed. We will try out several ideas which should make the service start up faster even if it gets hit with lots of requests right away.
